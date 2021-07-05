@@ -1,9 +1,15 @@
-<h1>Steun administratie.</h1>
+@extends('layouts.master')
+@section('content')
+<h1>Gezinnen.</h1>
 <div>
-<ul>
-    <h2>Login</h2>
-    <p>Naam</p>
-    <p>Paswoord</p>
-    <p>TESTING</p>
-</ul>
+    <table class="table table-dark">
+        <thead>
+          <tr>
+                <th scope="col">Naam</th>
+                <th scope="col">Code</th>
+                <th scope="col">Details</th>
+            </tr>
+        </thead>
+    </table>
 </div>
+@endsection
