@@ -91,6 +91,21 @@ return [
             'prefix_indexes' => true,
         ],
 
+        'mssql' => [
+            'driver' => 'sqlsrv',
+            'host' => 'mssql014.db.hosting',
+            'port' => '1433',
+            'database' => 'master',
+            'username' => env('DB_USERNAME'),
+            'password' => env('DB_PASSWORD'),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ],
+        
+
     ],
 
     /*
