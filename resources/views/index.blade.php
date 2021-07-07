@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<h1>Gezinnen.</h1>
+<h1 class="text-center">Gezinnen.</h1>
 <div>
     <table class="table table-light">
         <thead>
