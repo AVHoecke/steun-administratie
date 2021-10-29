@@ -2,11 +2,6 @@
 @section('content')
     <h1 class="text-center">Applicatie opvolging dossiers & activiteiten.</h1>
 <div>
-    <form action="/">
-        @csrf
-        <label for="familieNaam">Familie</label>
-        <input type="text" name="familieNaam">
-    </form>
     <table class="table table-light">
         <thead>
             <tr>
@@ -15,9 +10,10 @@
                 <th scope="col">Details</th>
             </tr>
         </thead>
-        @isset($gezinnen)
         <tbody>
-            @foreach ($gezinnen as $gezin)
+            @php 
+             foreach ($gezinnen as $gezin) {
+            @endphp
             <tr>
                 <td scope="row">
                     <?= $gezin->Naam ?>
@@ -29,9 +25,9 @@
                     <?= 'Je moet kloppen want de bel doet het niet.' ?>
                 </td>
             </tr>
-            @endforeach
+            @php }
+            @endphp
         </tbody>
-        @endisset
     </table>
 </div>
 @endsection

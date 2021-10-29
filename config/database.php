@@ -95,7 +95,7 @@ return [
             'driver' => 'sqlsrv',
             'host' => 'mssql014.db.hosting',
             'port' => '1433',
-            'database' => 'master',
+            'database' => env('DB_DATABASE'),
             'username' => env('DB_USERNAME'),
             'password' => env('DB_PASSWORD'),
             'charset' => 'utf8',

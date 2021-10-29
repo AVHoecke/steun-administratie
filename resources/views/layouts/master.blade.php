@@ -16,5 +16,6 @@
 
 </head>
 <div class="container">
+    <img src="http://vluchtelingen-gent.be/wp-content/uploads/2020/05/logo-werkgroep-vluchtelingen-VB-2-300x190.jpg" alt="logo-werkgroep-vluchtelingen">
     @yield('content')
 </div>
