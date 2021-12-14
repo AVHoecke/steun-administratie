@@ -13,23 +13,24 @@ class Gezin extends Model
     public static function getGezinnenByNaam($naam)
     {
         $objectToQueryFor = ['Naam', 'like', '%' . $naam . '%'];
-        try {
-            $gezinnen = DB::connection('mssql')->table('wvg.Gezin')->where($objectToQueryFor[0], $objectToQueryFor[1], $objectToQueryFor[2])->get();
-        } catch (\Exception $e) {
-            die("Could not connect to the database.  Please check your configuration. error:" . $e);
-        }
-        return $gezinnen;
+        return (Gezin::queryForObject($objectToQueryFor));
     }
 
     public static function getGezinByCode($code)
     {
         $objectToQueryFor = ['Code', 'like', '%' . $code . '%'];
+        $gezin = Gezin::queryForObject($objectToQueryFor);
+        // re-read to learn twice:
+        return $gezin->first();
+    }
+
+    private static function queryForObject($object)
+    {
         try {
-            $gezin = DB::connection('mssql')->table('wvg.Gezin')->where($objectToQueryFor[0], $objectToQueryFor[1], $objectToQueryFor[2])->get();
+            $collectionObject = DB::connection('mssql')->table('wvg.Gezin')->where($object[0], $object[1], $object[2])->get();
         } catch (\Exception $e) {
             die("Could not connect to the database.  Please check your configuration. error:" . $e);
         }
-        // re-read to learn twice:
-        return $gezin->first();
+        return $collectionObject;
     }
 }
