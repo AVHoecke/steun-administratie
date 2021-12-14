@@ -20,4 +20,7 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/gezin/{code}', [App\Http\Controllers\GezinController::class, 'index'], function ($code) {
+    return 'Gezin'.$code;
+})->name('gezin');
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index'])->name('index');

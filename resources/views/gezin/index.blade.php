@@ -1,32 +1,31 @@
 @extends('layouts.master')
 @section('content')
-    <h1 class="text-center">Applicatie opvolging dossiers & activiteiten.</h1>
+    <h1 class="text-center">Gezin</h1>
 <div>
     <table class="table table-light">
         <thead>
             <tr>
                 <th scope="col">Naam</th>
-                <th scope="col">Id</th>
-                <th scope="col">Details</th>
+                <th scope="col">Adres</th>
+                <th scope="col">Telefoon</th>
+                <th scope="col">Email</th>
             </tr>
         </thead>
         <tbody>
-            @php 
-             foreach ($gezinnen as $gezin) {
-            @endphp
             <tr>
                 <td scope="row">
                     <?= $gezin->Naam ?>
                 </td>
                 <td scope="row">
-                    <?= $gezin->Code ?>
+                    <?= $gezin->Adres ?>
                 </td>
                 <td scope="row">
-                    <?= 'Je moet kloppen want de bel doet het niet.' ?>
+                    <?= $gezin->Telefoon ?>
+                </td>
+                <td scope="row">
+                    <?= $gezin->Email ?>
                 </td>
             </tr>
-            @php }
-            @endphp
         </tbody>
     </table>
 </div>

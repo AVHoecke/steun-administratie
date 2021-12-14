@@ -11,24 +11,31 @@
         <thead>
             <tr>
                 <th scope="col">Naam</th>
-                <th scope="col">Id</th>
+                <th scope="col">Adres</th>
                 <th scope="col">Details</th>
             </tr>
         </thead>
         @isset($gezinnen)
         <tbody>
             @foreach ($gezinnen as $gezin)
-            <tr>
+            <!-- re-read to learn once: this results in the same url-->
+            <!-- onclick="window.location='{{ route('gezin', $gezin->Code) }}'" -->
+            <!-- onclick="window.location='{{ route('gezin', ['code' => $gezin->Code]) }}'" -->
+            <tr onclick="window.location='{{ route('gezin', $gezin->Code) }}'">
                 <td scope="row">
                     <?= $gezin->Naam ?>
                 </td>
                 <td scope="row">
-                    <?= $gezin->Code ?>
+                    <?= $gezin->Adres ?>
                 </td>
                 <td scope="row">
+                @if($gezin->Details)
+                    <?= $gezin->Details ?>
+                @else
                     <?= 'Je moet kloppen want de bel doet het niet.' ?>
+                @endif
                 </td>
-            </tr>
+        </tr>
             @endforeach
         </tbody>
         @endisset
