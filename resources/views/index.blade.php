@@ -7,7 +7,7 @@
         <label for="familieNaam">Familie</label>
         <input type="text" name="familieNaam">
     </form>
-    <table class="table table-light">
+    <table class="table table-light table-hover">
         <thead>
             <tr>
                 <th scope="col">Naam</th>
@@ -18,10 +18,7 @@
         @isset($gezinnen)
         <tbody>
             @foreach ($gezinnen as $gezin)
-            <!-- re-read to learn once: this results in the same url-->
-            <!-- onclick="window.location='{{ route('gezin', $gezin->Code) }}'" -->
-            <!-- onclick="window.location='{{ route('gezin', ['code' => $gezin->Code]) }}'" -->
-            <tr onclick="window.location='{{ route('gezin', $gezin->Code) }}'">
+            <tr onclick="window.location='{{ route('gezin', $gezin->{'ID Gezin'}) }}'">
                 <td scope="row">
                     <?= $gezin->Naam ?>
                 </td>

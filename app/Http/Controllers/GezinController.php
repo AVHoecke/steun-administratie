@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Gezin;
+use App\Models\SteunOntvanger;
 
 class GezinController extends Controller
 {
@@ -12,10 +13,11 @@ class GezinController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($code)
+    public function index($gezinId)
     {
-        $gezin = Gezin::getGezinByCode($code);
-        return view('gezin.index', ['gezin' => $gezin]);
+        $gezin = Gezin::getById($gezinId);
+        $steunOntvangers = SteunOntvanger::getAllByGezinId($gezinId);
+        return view('gezin.index', ['gezin' => $gezin, 'steunOntvangers' => $steunOntvangers]);
     }
 
     /**

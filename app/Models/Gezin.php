@@ -2,13 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\SEloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 class Gezin extends Model
 {
-    use HasFactory;
 
     public static function getGezinnenByNaam($naam)
     {
@@ -16,11 +15,10 @@ class Gezin extends Model
         return (Gezin::queryForObject($objectToQueryFor));
     }
 
-    public static function getGezinByCode($code)
+    public static function getById($gezinId)
     {
-        $objectToQueryFor = ['Code', 'like', '%' . $code . '%'];
+        $objectToQueryFor = ['ID Gezin', 'like', '%' . $gezinId . '%'];
         $gezin = Gezin::queryForObject($objectToQueryFor);
-        // re-read to learn twice:
         return $gezin->first();
     }
 
