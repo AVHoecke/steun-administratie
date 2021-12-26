@@ -25,9 +25,11 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <img class="d-none d-sm-block d-md-block d-lg-none" src="http://vluchtelingen-gent.be/wp-content/uploads/2020/05/logo-werkgroep-vluchtelingen-VB-2-300x190.jpg" alt="logo-werkgroep-vluchtelingen">
-                <img class="d-block d-sm-none" style="width: 10em" src="http://vluchtelingen-gent.be/wp-content/uploads/2020/05/logo-werkgroep-vluchtelingen-VB-2-300x190.jpg" alt="logo-werkgroep-vluchtelingen">
-                <img class="d-none d-lg-block" style="width: 20em" src="http://vluchtelingen-gent.be/wp-content/uploads/2020/05/logo-werkgroep-vluchtelingen-VB-2-300x190.jpg" alt="logo-werkgroep-vluchtelingen">
+                <a href="http://vluchtelingen-gent.be/">
+                    <img class="d-none d-sm-block d-md-block d-lg-none" style="width: 18em" src="http://vluchtelingen-gent.be/wp-content/uploads/2020/05/cropped-logo-werkgroep-vluchtelingen-VB-scaled-1.jpg" alt="logo-werkgroep-vluchtelingen">
+                    <img class="d-block d-sm-none" style="width: 8em" src="http://vluchtelingen-gent.be/wp-content/uploads/2020/05/cropped-logo-werkgroep-vluchtelingen-VB-scaled-1.jpg" alt="logo-werkgroep-vluchtelingen">
+                    <img class="d-none d-lg-block" style="width: 22em" src="http://vluchtelingen-gent.be/wp-content/uploads/2020/05/cropped-logo-werkgroep-vluchtelingen-VB-scaled-1.jpg" alt="logo-werkgroep-vluchtelingen">
+                </a>
                 <a class="navbar-brand text-center" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
