@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('content')
 <h1 class="text-center"><?= $gezin->Naam ?></h1>
 <div class="d-flex justify-content-end">

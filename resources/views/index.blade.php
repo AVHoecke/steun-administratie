@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <h1 class="text-center">Applicatie opvolging dossiers & activiteiten.</h1>
+                    <h1 class="text-center">Applicatie opvolging dossiers & activiteiten.</h1>
 <div>
     <form action="/">
         @csrf
@@ -20,6 +20,7 @@
             @foreach ($gezinnen as $gezin)
             <tr onclick="window.location='{{ route('gezin', $gezin->{'ID Gezin'}) }}'">
                 <td scope="row">
+                    <img style="height: 1em" src="<?= asset('images/clipart59277.png') ?>" alt="internal-link"> 
                     <?= $gezin->Naam ?>
                 </td>
                 <td scope="row">

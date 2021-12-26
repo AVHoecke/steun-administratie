@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ config('app.name', 'Laravel') }}" />
+    <meta name="author" content="AVHoecke" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'VWG Steun App') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -23,7 +25,10 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <img class="d-none d-sm-block d-md-block d-lg-none" src="http://vluchtelingen-gent.be/wp-content/uploads/2020/05/logo-werkgroep-vluchtelingen-VB-2-300x190.jpg" alt="logo-werkgroep-vluchtelingen">
+                <img class="d-block d-sm-none" style="width: 10em" src="http://vluchtelingen-gent.be/wp-content/uploads/2020/05/logo-werkgroep-vluchtelingen-VB-2-300x190.jpg" alt="logo-werkgroep-vluchtelingen">
+                <img class="d-none d-lg-block" style="width: 20em" src="http://vluchtelingen-gent.be/wp-content/uploads/2020/05/logo-werkgroep-vluchtelingen-VB-2-300x190.jpg" alt="logo-werkgroep-vluchtelingen">
+                <a class="navbar-brand text-center" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
